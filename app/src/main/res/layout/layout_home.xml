@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="240dp"
+
+    android:orientation="vertical">
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="240dp"
+    app:cardCornerRadius="15dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/toplayout"
+        android:background="@drawable/homepageback"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_height="240dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="50dp"
+            android:visibility="visible"
+            android:id="@+id/drawericon"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/iconmenu"
+            app:tint="@color/white">
+        </ImageView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="macmark.com"
+            android:id="@+id/website"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/white"
+            android:layout_marginTop="50dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@+id/logo">
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginLeft="5dp"
+            android:text="Your Partner in Property"
+            android:id="@+id/tagline"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/website"
+            app:layout_constraintLeft_toRightOf="@+id/logo">
+        </TextView>
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="50dp"
+            android:id="@+id/logo"
+
+            app:layout_constraintLeft_toRightOf="@+id/drawericon"
+            android:layout_marginRight="15dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/logo">
+        </de.hdodenhof.circleimageview.CircleImageView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardviewbuyandsell"
+            android:layout_width="120dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="12dp"
+            app:layout_constraintBottom_toTopOf="@+id/cardView"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintVertical_bias="0.0">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="fill_parent"
+                android:layout_height="30dp">
+                <TextView
+                    android:id="@+id/textBuy"
+                    android:layout_width="0dp"
+                    app:layout_constraintWidth_percent="0.50"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:text="Buy"
+                    android:textStyle="bold"
+                    android:background="@color/white"
+                    android:textColor="@color/green"
+                    app:layout_constraintLeft_toLeftOf="parent" />
+                <TextView
+                    android:id="@+id/textRent"
+                    android:layout_width="0dp"
+                    app:layout_constraintWidth_percent="0.50"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:background="@color/flat_grey_light_2"
+                    android:textColor="@color/black"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:text="Rent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_height="37dp"
+            android:layout_marginTop="16dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="8dp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintVertical_bias="0.0">
+
+            <android.widget.SearchView
+                android:id="@+id/searchView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginVertical="5dp"
+                android:background="@color/white"
+                android:closeIcon="@drawable/ic_close"
+                android:iconifiedByDefault="true"
+                android:queryHint="Search For Property"
+                android:theme="@style/AppSearchView"
+                app:iconifiedByDefault="false"
+                android:tooltipText="Properties"
+
+                app:queryHint="Search Properties" />
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
+
+</RelativeLayout>

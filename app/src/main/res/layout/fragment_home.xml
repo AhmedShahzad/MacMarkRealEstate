@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <ProgressBar
+        android:id="@+id/progressHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:theme="@style/ProgressBar" />
+    <include
+        android:id="@+id/layState"
+        layout="@layout/layout_no_data"
+        android:visibility="gone" />
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsSV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <include
+                android:id="@+id/topHome"
+                layout="@layout/layout_home"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                app:cardCornerRadius="13dp"
+                android:layout_marginEnd="15dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:id="@+id/rlHomeCat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginBottom="0dp">
+                        <TextView
+                            android:id="@+id/tvHomeCat"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_toStartOf="@+id/tvHomeSeeAllCat"
+                            android:fontFamily="@font/urbanistbold"
+                            android:includeFontPadding="false"
+                            android:text="Browse Properties"
+                            android:textColor="@color/title"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/tvHomeSeeAllCat"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:fontFamily="@font/urbanistextrabold"
+                            android:includeFontPadding="false"
+                            android:text="@string/see_all"
+                            android:textColor="@color/purple"
+                            android:textSize="14sp" />
+
+                    </RelativeLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvCat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:clipToPadding="false"
+                android:paddingEnd="10dp" />
+                    <GridView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/types"
+                        android:numColumns="4">
+                    </GridView>
+                <GridView
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:id="@+id/gridview"
+                    android:verticalSpacing="8dp"
+                    android:horizontalSpacing="8dp"
+                    android:layout_marginTop="20dp"
+                    android:numColumns="3">
+                </GridView>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                app:cardCornerRadius="13dp"
+                android:layout_marginEnd="15dp">
+
+
+            <RelativeLayout
+                android:id="@+id/rlCostconstruction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="0dp">
+
+                <TextView
+                    android:id="@+id/tvConstrucioncost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:fontFamily="@font/urbanistbold"
+                    android:includeFontPadding="false"
+                    android:layout_marginTop="5dp"
+
+                    android:layout_alignParentTop="true"
+                    android:text="Construction Cost Calculator"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/tvConstrucioncostdesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:fontFamily="@font/urbanistextrabold"
+                    android:includeFontPadding="false"
+                    android:layout_marginTop="15dp"
+                    android:layout_below="@+id/tvConstrucioncost"
+                    android:text="Get A quickly estimated of \nyour house's construction\ncost"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="12sp" />
+                <TextView
+                    android:id="@+id/tvtrynow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:fontFamily="@font/urbanistextrabold"
+
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/cb_background_round_drawable"
+                    android:layout_below="@+id/tvConstrucioncostdesc"
+                    android:text="Try Now"
+                    android:drawableTint="@color/black"
+                    android:drawableRight="@drawable/payu_arrow_right"
+                    android:layout_marginBottom="20dp"
+                    android:padding="10dp"
+                    android:backgroundTint="@color/lightGrey"
+
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="14sp" />
+                <ImageView
+                    android:layout_width="140dp"
+android:layout_centerVertical="true"
+                    android:src="@drawable/costcalculator"
+                    android:layout_alignParentRight="true"
+                    android:layout_height="140dp"
+                    android:alpha="0.40">
+
+                </ImageView>
+            </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                app:cardCornerRadius="13dp"
+                android:layout_marginEnd="15dp">
+
+
+                <RelativeLayout
+                    android:id="@+id/rlrecentsearches"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="0dp">
+
+                    <TextView
+                        android:id="@+id/tvrecentsearch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:fontFamily="@font/urbanistbold"
+                        android:includeFontPadding="false"
+                        android:layout_marginTop="5dp"
+                        android:layout_alignParentTop="true"
+                        android:text="Recent Searches"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+                    <TextView
+                        android:id="@+id/tvplotsize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:fontFamily="@font/urbanistextrabold"
+                        android:includeFontPadding="false"
+                        android:layout_marginTop="15dp"
+                        android:layout_below="@+id/tvrecentsearch"
+                        android:text="  Plots For Sale"
+                        android:paddingTop="6dp"
+                        android:drawableLeft="@drawable/baseline_search_24"
+                        android:textColor="@color/maincolor"
+                        android:textSize="12sp" />
+                    <TextView
+                        android:id="@+id/tvanyareasize"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:includeFontPadding="false"
+                        android:layout_marginTop="7dp"
+                        android:layout_below="@+id/tvplotsize"
+                        android:text="Any Area Size"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="12sp" />
+                    <TextView
+                        android:id="@+id/tvlastsearch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:fontFamily="@font/gothamssm_light"
+                        android:includeFontPadding="false"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="5dp"
+                        android:drawableLeft="@drawable/baseline_edit_location_24"
+                        android:layout_below="@+id/tvanyareasize"
+                        android:text="Rudn Enclave Society"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="12sp" />
+                    <TextView
+                        android:id="@+id/tvpirce"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:fontFamily="@font/gothamssm_light"
+                        android:includeFontPadding="false"
+
+                        android:layout_marginBottom="10dp"
+                        android:drawableLeft="@drawable/baseline_edit_location_24"
+                        android:layout_below="@+id/tvlastsearch"
+                        android:text="PKR 34,89,999"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="12sp" />
+                    <ImageView
+                        android:layout_width="140dp"
+                        android:visibility="gone"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/costcalculator"
+                        android:layout_alignParentRight="true"
+                        android:layout_height="140dp"
+                        android:alpha="0.40">
+
+                    </ImageView>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                app:cardCornerRadius="13dp"
+                android:layout_marginEnd="15dp">
+
+
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="0dp">
+
+                    <TextView
+                        android:id="@+id/tvplotfinder"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:fontFamily="@font/urbanistbold"
+                        android:includeFontPadding="false"
+                        android:layout_marginTop="5dp"
+                        android:layout_alignParentTop="true"
+                        android:text="Plot Finder"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+                    <TextView
+                        android:id="@+id/tvplotfinderdesc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:fontFamily="@font/urbanistextrabold"
+                        android:includeFontPadding="false"
+                        android:layout_marginTop="15dp"
+                        android:layout_below="@+id/tvplotfinder"
+                        android:text="Interactive Soceity Map\n1.5+ Plots | Societies"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="12sp" />
+                    <TextView
+                        android:id="@+id/tvtryplotfindernow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:fontFamily="@font/urbanistextrabold"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/cb_background_round_drawable"
+                        android:layout_below="@+id/tvplotfinderdesc"
+                        android:text="Try It Now"
+                        android:drawableTint="@color/black"
+                        android:drawableRight="@drawable/payu_arrow_right"
+                        android:layout_marginBottom="20dp"
+                        android:padding="10dp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:backgroundTint="@color/lightGrey"
+                        android:textSize="14sp" />
+                    <ImageView
+                        android:layout_width="140dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/plotfind"
+                        android:layout_alignParentRight="true"
+                        android:layout_height="140dp"
+                        android:alpha="0.40">
+
+                    </ImageView>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <RelativeLayout
+                android:id="@+id/rlHomeRecent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="0dp">
+
+                <TextView
+                    android:id="@+id/tvHomeRecent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@+id/tvHomeSeeAllRecent"
+                    android:fontFamily="@font/urbanistextrabold"
+                    android:includeFontPadding="false"
+                    android:text="@string/recent_property"
+                    android:textColor="@color/title"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tvHomeSeeAllRecent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:fontFamily="@font/urbanistextrabold"
+                    android:includeFontPadding="false"
+                    android:text="@string/see_all"
+                    android:textColor="@color/purple"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvRecent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:clipToPadding="false"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/mcHomeItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                app:cardBackgroundColor="@color/white_bg"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="0dp"
+                app:rippleColor="@color/card_view_ripple">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/rlHomePopular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="0dp">
+
+                    <TextView
+                        android:id="@+id/tvHomePopular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@+id/tvHomeSeeAllPopular"
+                        android:fontFamily="@font/urbanistextrabold"
+                        android:includeFontPadding="false"
+                        android:text="@string/popular_property"
+                        android:textColor="@color/title"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tvHomeSeeAllPopular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:fontFamily="@font/urbanistextrabold"
+                        android:includeFontPadding="false"
+                        android:text="@string/see_all"
+                        android:textColor="@color/purple"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvPopular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:clipToPadding="false"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <RelativeLayout
+                android:id="@+id/rlHomeLatest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="0dp">
+
+                <TextView
+                    android:id="@+id/tvHomeLatest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@+id/tvHomeSeeAllLatest"
+                    android:fontFamily="@font/urbanistextrabold"
+                    android:includeFontPadding="false"
+                    android:text="@string/latest_property"
+                    android:textColor="@color/title"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tvHomeSeeAllLatest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:fontFamily="@font/urbanistextrabold"
+                    android:includeFontPadding="false"
+                    android:text="@string/see_all"
+                    android:textColor="@color/purple"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvLatest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:clipToPadding="false"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp" />
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>
